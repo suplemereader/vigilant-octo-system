@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Michelle Blake - Michelle Blake Yoga</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #3057EC;
+            --secondary-color: #3057EC;
+            --accent-color: #3057EC;
+            --text-dark: #3D2B1F;
+            --text-light: #7A6652;
+            --bg-light: #F9F9F9;
+            --bg-white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: #FFFFFF;
+        }
+
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .sticky-nav.scrolled {
+            background: rgba(225, 244, 254, 0.95);
+            box-shadow: 0 2px 20px rgba(48, 87, 236, 0.15);
+        }
+
+        .nav-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .nav-reviews {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-reviews:hover {
+            opacity: 0.8;
+        }
+
+        .nav-cta {
+            padding: 0.4rem 1rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            position: relative;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            display: inline-block;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(90deg,
+                #ff0000, #ff7f00, #ffff00, #00ff00,
+                #0000ff, #8b00ff, #ff0000);
+            background-size: 400% 400%;
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-cta:hover::before {
+            opacity: 1;
+            animation: rainbow-border 4s linear infinite;
+        }
+
+        @keyframes rainbow-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 6rem 2rem 2rem;
+            text-align: center;
+            background: transparent;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Layout with Image */
+        .about-intro-layout {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .about-headshot {
+            flex-shrink: 0;
+            width: 280px;
+        }
+
+        .about-headshot img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border: 3px solid rgba(165, 225, 250, 0.6);
+        }
+
+        .about-intro-text {
+            flex: 1;
+        }
+
+        @media (max-width: 700px) {
+            .about-intro-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-headshot {
+                width: 220px;
+            }
+        }
+
+        /* About Content */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+        }
+
+        .about-lead {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Pull Quote */
+        .pull-quote {
+            margin: 1rem 0;
+            padding: 2rem 2.5rem;
+            border-left: 4px solid var(--primary-color);
+            background: rgba(217, 236, 255);
+            border-radius: 0 15px 15px 0;
+        }
+
+        .pull-quote p {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--primary-color);
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .pull-quote .attribution {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Image Section */
+        .about-image {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border: 3px solid rgba(165, 225, 250, 0.6);
+        }
+
+        /* Training Section */
+        .training-highlight {
+            background: rgba(225, 244, 254);
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .training-highlight-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .training-highlight h2 {
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .training-highlight .about-text {
+            text-align: center;
+        }
+
+        /* Credentials Grid */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .credential-item {
+            background: white;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .credential-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(48, 87, 236, 0.1);
+        }
+
+        .credential-checkmark {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .credential-text {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(48, 87, 236, 0.3), 0 0 20px rgba(165, 225, 250, 0.3);
+            position: relative;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(90deg,
+                #ff0000, #ff7f00, #ffff00, #00ff00,
+                #0000ff, #8b00ff, #ff0000);
+            background-size: 400% 400%;
+            border-radius: 50px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+            animation: rainbow-border 4s linear infinite;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 15px 40px rgba(48, 87, 236, 0.4), 0 0 30px rgba(165, 225, 250, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .footer-cta-wrapper {
+            position: relative;
+            display: inline-block;
+            border-radius: 50px;
+            padding: 3px;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+
+        .footer-cta-wrapper:hover {
+            background: linear-gradient(90deg,
+                #ff0000, #ff7f00, #ffff00, #00ff00,
+                #0000ff, #8b00ff, #ff0000);
+            background-size: 400% 400%;
+            animation: rainbow-border 4s linear infinite;
+        }
+
+        .footer-cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(48, 87, 236, 0.3);
+            position: relative;
+            border: none;
+        }
+
+        /* Fade-in animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body id="top">
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav" id="stickyNav">
+        <a href="https://michelleblakeyoga.com" class="nav-logo-link"><img src="https://michelleblakeyoga.com/mby_logo_transparent.png" alt="Michelle Blake Yoga" class="nav-logo"></a>
+        <div class="nav-links">
+            <a href="https://michelleblakeyoga.com#testimonials" class="nav-reviews"><span style="color: #FCD34D;">★★★★★</span></a>
+            <a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="nav-cta">Book a Session</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About Michelle</h1>
+        <p>20+ years of helping people move better, feel better, and be better</p>
+    </section>
+
+    <!-- Lead Section with Headshot -->
+    <section class="fade-in-section">
+        <div class="about-intro-layout">
+            <div class="about-headshot">
+                <img src="https://www.michelleblakeyoga.com/images/headshot_gold_to_aqua_backgd.png" alt="Michelle Blake">
+            </div>
+            <div class="about-intro-text">
+                <p class="about-lead">Michelle Blake has spent over 20 years helping people move better, feel better, and be better. Through Michelle Blake Yoga℠, she offers private, semi-private, and virtual sessions that weave together therapeutic yoga, Pilates, barre, functional strength training, bodywork, and meditation, all shaped around the person in front of her.</p>
+                <p class="about-text">Michelle's gift is meeting people exactly where they are. A client recovering from back surgery gets a different session than one working through chronic pain or managing scoliosis — and both get a completely different session the following week. She listens to what the body is saying, often before the client can put it into words. One long-time student calls her a "body whisperer."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Quote -->
+    <section class="fade-in-section">
+        <div class="about-content">
+            <div class="pull-quote">
+                <p>"I follow her everywhere she goes, because she is a very good teacher — I cannot find anyone that cares about your physical as well as your spiritual the way she does."</p>
+                <div class="attribution">— Mai N., client since 2005</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Training -->
+    <section class="fade-in-section">
+        <div class="about-content">
+            <p class="about-text">That care is grounded in disciplined study and backed by science. Michelle has trained directly with some of the most respected practitioners in the field — Leeann Carey (Yapana® Yoga), Gary Kraftsow (Viniyoga™), Judith Hanson Lasater (Restorative Yoga), Beryl Bender Birch (Power Yoga), Tias Little (Ashtanga), Hazel Chung (Ohashiatsu®), Kim and Herson Garcia (NeuroKinetic Therapy®), Sue Hitzmann (the MELT Method®), and Evan Osar (Integrative Movement System™), among numerous others.</p>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="fade-in-section">
+        <div class="about-content">
+            <p class="about-text">She is also a Reiki Master, a Compassion Key® modality Master Practitioner and Circle Leader, a certified Intergenerational Trauma Healing Method practitioner, and a CHEK Institute Holistic Lifestyle Coach. Her toolbox also includes Healing from the Core®, Yamuna Body Rolling®, meditation, breathwork, and Pilates on both mat and apparatus.</p>
+        </div>
+    </section>
+
+    <!-- Management Background -->
+    <section class="fade-in-section">
+        <div class="about-content">
+            <p class="about-text">Before building her private practice, Michelle spent over 15 years in fitness program management, leading teams of up to 100 and building group fitness programs that ranked in the top five across a 23-club company. She brings that same dedication and client-first mindset to every session — it's why her clients stay for years, and why so many describe her work as "without a doubt the best" they've experienced.</p>
+        </div>
+    </section>
+
+    <!-- Closing Quote -->
+    <section class="fade-in-section">
+        <div class="about-content">
+            <p class="about-text">Impeccable credentials only tell part of the story. What keeps people coming back — some for over a decade — is how they feel when they leave.</p>
+            <div class="pull-quote">
+                <p>"An hour of flow with Michelle Blake leaves me calmer, taller, and stronger."</p>
+                <div class="attribution">— Jud M.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section fade-in-section">
+        <h2>Ready to Begin?</h2>
+        <p>Experience the difference for yourself.</p>
+        <a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="cta-button">Book A Session Now</a>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="footer-logo">
+            <img src="https://michelleblakeyoga.com/mbyoga_logo_lightgrey_text_℠.png" alt="Michelle Blake Yoga" style="width: 300px; height: auto; opacity: 0.95;">
+        </div>
+
+        <h3>Ready to Transform Your Life?</h3>
+        <p>Join our community and experience the Michelle Blake Yoga difference</p>
+        <div class="footer-cta-wrapper"><a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="footer-cta-button">Start Your Journey Today</a></div>
+    </section>
+
+    <script>
+        // Scroll fade-in animations
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            fadeObserver.observe(section);
+        });
+
+        // Navbar color shift on scroll
+        const nav = document.getElementById('stickyNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'auto', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
