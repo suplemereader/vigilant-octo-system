@@ -364,25 +364,6 @@
     margin: 0 auto;
   }
 
-  /* ── ABOUT LINK ── */
-  .about-link-section {
-    background: var(--cream);
-    padding: 40px 24px;
-    text-align: center;
-  }
-
-  .about-link {
-    font-family: 'Telugu MN', Georgia, serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--sage);
-    text-decoration: underline;
-    transition: color 0.3s ease;
-  }
-
-  .about-link:hover {
-    color: var(--deep-green);
-  }
-
   /* ── SCHEDULE BUTTONS ── */
   .schedule-section {
     background: var(--cream);
@@ -561,10 +542,6 @@
     <a href="https://edwardmannix.as.me/?appointmentType=84617339" class="schedule-btn" target="_blank">Schedule a Private<br>Session</a>
     <a href="https://app.acuityscheduling.com/catalog.php?owner=11180374&action=addCart&clear=1&id=2066948" class="schedule-btn schedule-btn-outline" target="_blank">Schedule a Private<br>Session Package</a>
   </div>
-</section>
-
-<section class="about-link-section">
-  <a href="https://suplemereader.github.io/vigilant-octo-system/ckabout.html" class="about-link">About Michelle</a>
 </section>
 
 <!-- ═══ CLOSING ═══ -->
