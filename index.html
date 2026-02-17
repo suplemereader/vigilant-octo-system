@@ -53,6 +53,22 @@
             width: auto;
         }
 
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo-ck {
+            height: 42px;
+            width: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+            transform: scale(1.15);
+            clip-path: circle(50%);
+        }
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -838,7 +854,10 @@
 <body id="top">
     <!-- Sticky Navigation -->
     <nav class="sticky-nav" id="stickyNav">
-        <a href="#top" class="nav-logo-link"><img src="https://michelleblakeyoga.com/mby_logo_transparent.png" alt="Michelle Blake Yoga" class="nav-logo"></a>
+        <div class="nav-logos">
+            <a href="#top" class="nav-logo-link"><img src="https://michelleblakeyoga.com/mby_logo_transparent.png" alt="Michelle Blake Yoga" class="nav-logo"></a>
+            <a href="https://suplemereader.github.io/vigilant-octo-system/ck.html" class="nav-logo-link"><img src="https://michelleblakeyoga.com/images/ckroundel.png" alt="Compassion Key" class="nav-logo nav-logo-ck"></a>
+        </div>
         <div class="nav-links">
             <a href="#testimonials" class="nav-reviews"><span style="color: #FCD34D;">★★★★★</span></a>
             <a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="nav-cta">Book a Session</a>
