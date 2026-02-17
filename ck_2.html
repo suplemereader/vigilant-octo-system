@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compassion Key — Emotional Healing Modality</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Tenor+Sans&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --cream: #f8f5f0;
+    --sage: #7a8c6e;
+    --sage-light: #a3b396;
+    --deep-green: #2c3a28;
+    --warm-gray: rgba(60, 55, 48, 0.55);
+    --text-light: #7A6652;
+    --text-body: #3a3530;
+    --gold-accent: #c4a96a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Tenor Sans', Georgia, serif;
+    color: var(--text-body);
+    background: #0a0d08;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO SECTION ── */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: brightness(0.85) saturate(1.1);
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 13, 8, 0.15) 0%,
+      rgba(10, 13, 8, 0.0) 30%,
+      rgba(10, 13, 8, 0.0) 60%,
+      rgba(10, 13, 8, 0.7) 100%
+    );
+  }
+
+  /* ── TOP BANNER (transparent grey like reference) ── */
+  .top-banner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 28px 40px;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    animation: bannerFadeIn 1.2s ease-out;
+  }
+
+  @keyframes bannerFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .banner-title {
+    font-family: 'Telugu MN', Georgia, serif;
+    font-weight: 400;
+    font-size: 48pt;
+    color: white;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .banner-tagline {
+    font-family: 'Telugu MN', Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32pt;
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── HERO CONTENT ── */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px 80px;
+    max-width: 780px;
+  }
+
+  .hero-heading {
+    font-family: 'Telugu MN', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    color: white;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+    animation: heroTextIn 1.6s ease-out 0.3s both;
+  }
+
+  .hero-heading em {
+    font-style: italic;
+    color: var(--gold-accent);
+  }
+
+  @keyframes heroTextIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-subtitle {
+    margin-top: 24px;
+    font-family: 'Telugu MN', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
+    color: rgba(255,255,255,0.82);
+    line-height: 1.7;
+    text-shadow: 0 1px 16px rgba(0,0,0,0.35);
+    animation: heroTextIn 1.6s ease-out 0.6s both;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: heroTextIn 1.6s ease-out 1s both;
+  }
+
+  .scroll-indicator span {
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ── BODY CONTENT ── */
+  .content-section {
+    position: relative;
+    background: var(--cream);
+    padding: 100px 24px 120px;
+  }
+
+  .content-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(10,13,8,0.12), transparent);
+    pointer-events: none;
+  }
+
+  .content-inner {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  .section-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+
+  .ornament-line {
+    width: 60px;
+    height: 1px;
+    background: var(--sage-light);
+  }
+
+  .ornament-diamond {
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--sage);
+    transform: rotate(45deg);
+  }
+
+  .content-intro {
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-weight: 400;
+    font-size: 22pt;
+    color: var(--text-light);
+    line-height: 1.55;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  .content-body p {
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-size: 1.2rem;
+    line-height: 1.95;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .content-body p:nth-child(1) { animation-delay: 0.3s; }
+  .content-body p:nth-child(2) { animation-delay: 0.45s; }
+  .content-body p:nth-child(3) { animation-delay: 0.6s; }
+  .content-body p:nth-child(4) { animation-delay: 0.75s; }
+  .content-body p:nth-child(5) { animation-delay: 0.9s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .content-body p .highlight {
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    margin: 56px 0;
+    padding: 40px 48px;
+    border-left: 3px solid var(--gold-accent);
+    background: rgba(122, 140, 110, 0.06);
+    border-radius: 0 8px 8px 0;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 1s forwards;
+  }
+
+  .pull-quote p {
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    color: var(--text-light);
+    margin-bottom: 0 !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  /* ── CLOSING ── */
+  .closing-section {
+    background: url('geranium_blurred.png') center/cover no-repeat;
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .closing-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .closing-section .section-ornament .ornament-line {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .closing-section .section-ornament .ornament-diamond {
+    border-color: var(--gold-accent);
+  }
+
+  .closing-text {
+    font-family: 'Telugu MN', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    color: rgba(255, 255, 255, 1);
+    line-height: 1.7;
+    font-style: normal;
+  }
+
+  .closing-cta {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 16px 48px;
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid var(--gold-accent);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+  }
+
+  .closing-cta:hover {
+    background: var(--gold-accent);
+    color: var(--deep-green);
+  }
+
+  /* ── OCEAN IMAGE ── */
+  .ocean-image-section {
+    width: 100%;
+    background: var(--cream);
+    padding: 0 24px 60px;
+    text-align: center;
+  }
+
+  .ocean-image-section img {
+    width: 100%;
+    max-width: 740px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* ── ABOUT LINK ── */
+  .about-link-section {
+    background: var(--cream);
+    padding: 10px 24px;
+    text-align: center;
+  }
+
+  .about-link {
+    font-family: 'Telugu MN', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--sage);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .about-link:hover {
+    color: var(--deep-green);
+  }
+
+  /* ── SCHEDULE BUTTONS ── */
+  .schedule-section {
+    background: var(--cream);
+    padding: 0 24px 80px;
+    text-align: center;
+  }
+
+  .schedule-inner {
+    max-width: 740px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .schedule-btn {
+    display: inline-block;
+    padding: 18px 36px;
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: white;
+    background: rgba(169, 190, 104, 1);
+    border: 2px solid rgba(169, 190, 104, 1);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .schedule-btn:hover {
+    border-color: rgba(255,255,255,0.6);
+    opacity: 0.9;
+  }
+
+  .schedule-btn-outline {
+    background: rgba(169, 190, 104, 1);
+    color: white;
+  }
+
+  .schedule-btn-outline:hover {
+    border-color: rgba(255,255,255,0.6);
+    color: white;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: url('geranium_blurred.png') center/cover no-repeat;
+    padding: 32px 24px;
+    text-align: center;
+    font-family: 'Tenor Sans', Georgia, serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .top-banner {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 20px 24px;
+    }
+
+    .hero-content {
+      padding: 40px 20px 60px;
+    }
+
+    .pull-quote {
+      padding: 28px 24px;
+    }
+
+    .content-section {
+      padding: 72px 20px 88px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="geranium.png" alt="Aeonium succulent rosette — a symbol of natural wholeness">
+  </div>
+
+  <!-- Transparent grey banner at top -->
+  <div class="top-banner">
+    <div class="banner-title">The Compassion Key</div>
+    <div class="banner-tagline">"I'm so sorry…"</div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-subtitle">A gentle yet powerful emotional healing modality<br>that uses self-directed compassion to restore the soul.</p>
+  </div>
+
+
+</section>
+
+<!-- ═══ CONTENT ═══ -->
+<section class="content-section">
+  <div class="content-inner">
+
+    <div class="section-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line"></div>
+    </div>
+
+    <p class="content-intro">
+      Compassion Key is a gentle yet powerful emotional healing modality that uses self-directed compassion to restore wholeness within the psyche and soul.
+    </p>
+
+<!-- ═══ CHERRY BLOSSOM IMAGE ═══ -->
+<section class="ocean-image-section">
+  <img src="https://michelleblakeyoga.com/images/cherry-blossoms.jpg" alt="Cherry Blossom">
+</section>
+<!-- ══════════════════════════════ -->
+
+    <div class="content-body">
+      <p>
+        Throughout life, moments of pain, trauma, or unmet needs can cause parts of us to fragment or withdraw. These wounded inner parts continue to shape our thoughts, relationships, and nervous system responses—often outside of conscious awareness. Compassion Key offers a safe, guided process for meeting these parts with <span class="highlight">presence, understanding, and care</span>.
+      </p>
+
+        <!-- ═══ MOSSY ROCK IMAGE ═══ -->
+        <section class="ocean-image-section">
+          <img src="https://michelleblakeyoga.com/images/mossy-rock.jpg" alt="Mossy Rock">
+        </section>
+        <!-- ══════════════════════════════ -->
+
+      <p>
+        Through visualization and compassionate attention, we retrieve and reintegrate these wounded aspects of the self. As they are welcomed home, the inner system reorganizes. What was once held in tension softens. Energy that was bound in protection or pain becomes available again for living.
+      </p>
+
+      <div class="pull-quote">
+        <p>As the inner world becomes more whole, the soul's inherent light reflects more clearly through the body and mind.</p>
+      </div>
+
+      <p>
+        Life begins to feel more easeful, aligned, and joyful—not because circumstances are forced to change, but because the inner relationship to self has healed.
+
+        <!-- ═══ ROCKS AND WATER IMAGE ═══ -->
+        <section class="ocean-image-section">
+          <img src="https://michelleblakeyoga.com/images/rocks-and-water.jpg" alt="Rocks and Water">
+        </section>
+        <!-- ══════════════════════════════ -->
+      </p>
+      <p>
+        A Compassion Key session is not about fixing or bypassing pain. It is about remembering how to meet yourself with compassion, allowing your natural wisdom and vitality to return.
+      </p>
+        <!-- ═══ PALM TREE IMAGE ═══ -->
+        <section class="ocean-image-section">
+          <img src="https://michelleblakeyoga.com/images/palm-tree.jpeg" alt="Palm Tree">
+        </section>
+        <!-- ══════════════════════════════ -->
+      <p>
+        The result is a more <span class="highlight">embodied, emotionally regulated, and authentic</span> way of being—one that supports clarity, connection, and inner peace.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OCEAN IMAGE ═══ -->
+<section class="ocean-image-section">
+  <img src="https://michelleblakeyoga.com/images/walking-into-ocean.jpg" alt="Walking into the ocean">
+</section>
+
+<!-- ═══ SCHEDULE BUTTONS ═══ -->
+<section class="schedule-section">
+  <div class="schedule-inner">
+    <a href="https://edwardmannix.as.me/?appointmentType=84617339" class="schedule-btn" target="_blank">Schedule a Private<br>Session</a>
+    <a href="https://app.acuityscheduling.com/catalog.php?owner=11180374&action=addCart&clear=1&id=2066948" class="schedule-btn schedule-btn-outline" target="_blank">Schedule a Private<br>Session Package</a>
+  </div>
+</section>
+
+<section class="about-link-section">
+  <a href="https://suplemereader.github.io/vigilant-octo-system/ckabout.html" class="about-link">About Michelle</a>
+</section>
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing-section">
+  <div class="closing-inner">
+    <div class="section-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <p class="closing-text">
+      You already carry everything you need to heal.<br>
+      Compassion Key simply helps you remember.
+    </p>
+
+  </div>
+</section>
+
+
+
+</body>
+</html>
