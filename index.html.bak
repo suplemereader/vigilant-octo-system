@@ -12,16 +12,14 @@
         }
 
         :root {
-            --primary-color: #3057EC;
-            --secondary-color: #3057EC;
-            --accent-color: #3057EC;
-            --text-dark: #3D2B1F;
-            --text-light: #7A6652;
-            --bg-light: #F9F9F9;
+            --primary-color: #6B46C1;
+            --secondary-color: #9333EA;
+            --accent-color: #EC4899;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --bg-light: #FDF2F8;
             --bg-white: #FFFFFF;
             --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --bg-gradient-warm: transparent;
-            --bg-gradient-warm-strong: transparent;
         }
 
         body {
@@ -29,7 +27,7 @@
             line-height: 1.6;
             color: var(--text-dark);
             overflow-x: hidden;
-            background: #FFFFFF;
+            background: linear-gradient(to bottom, #FDF2F8, #FFFFFF);
         }
 
         /* Sticky Navigation - Always visible */
@@ -53,41 +51,18 @@
             width: auto;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        .nav-reviews {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: opacity 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .nav-reviews:hover {
-            opacity: 0.8;
-        }
-
         .nav-cta {
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.5rem;
             background: var(--gradient);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             position: relative;
             border: 2px solid transparent;
             background-clip: padding-box;
             display: inline-block;
-            white-space: nowrap;
-            flex-shrink: 0;
         }
 
         .nav-cta::before {
@@ -123,8 +98,8 @@
             padding: 2rem;
             padding-top: 5rem;
             position: relative;
-            background: transparent;
-                        
+            background: radial-gradient(ellipse at top, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
         }
 
         .logo-container {
@@ -137,7 +112,7 @@
             width: 100%;
             height: auto;
             max-width: 400px;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 10px 30px rgba(147, 51, 234, 0.2));
         }
 
         .hero-questions {
@@ -175,7 +150,7 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(48, 87, 236, 0.3);
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
             position: relative;
             border: 3px solid transparent;
             background-clip: padding-box;
@@ -215,7 +190,7 @@
         /* Services Section */
         .services-section {
             padding: 5rem 1rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.25) 100%), #3057EC;
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
         }
 
         .section-container {
@@ -231,18 +206,11 @@
         .section-header h2 {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
-            background: #3057EC;
+            background: var(--gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 1rem;
-        }
-
-        .services-section .section-header h2 {
-            background: rgba(165, 225, 250);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .section-header p {
@@ -277,32 +245,15 @@
             background: var(--gradient);
         }
 
-        .services-section .section-header p {
-            color: rgba(220, 220, 220, 0.9);
-        }
-
-        .services-section .service-card::before {
-            background: rgba(165, 225, 250);
-            height: 6px;
-        }
-
-        .services-section .service-card {
-            box-shadow: 0 10px 30px rgba(165, 225, 250, 0.4);
-        }
-
-        .services-section .service-card:hover {
-            box-shadow: 0 15px 45px rgba(165, 225, 250, 0.6);
-        }
-
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(48, 87, 236, 0.15);
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.15);
         }
 
         .service-icon {
             width: 60px;
             height: 60px;
-            background: rgba(48, 87, 236, 0.1);
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -380,7 +331,7 @@
 
         .benefit-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(48, 87, 236, 0.15);
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.15);
         }
 
         .benefit-toggle {
@@ -408,35 +359,30 @@
             line-height: 1.4;
         }
 
-        .benefit-item.active .benefit-title {
-            color: #3057EC;
-        }
-
         .toggle-icon {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: rgba(217, 236, 255);
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: #3057EC;
+            color: var(--accent-color);
             font-weight: 300;
             transition: all 0.3s ease;
             flex-shrink: 0;
             margin-left: 1rem;
         }
 
-        .benefit-item .benefit-toggle:hover .toggle-icon {
-            background: #2848D0;
-            color: white;
+        .benefit-item:hover .toggle-icon {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
         }
 
         .benefit-item.active .toggle-icon {
-            transform: none;
-            background: rgba(218, 240, 251) !important;
-            color: #3057EC !important;
+            transform: rotate(45deg);
+            background: var(--gradient);
+            color: white;
         }
 
         .benefit-content {
@@ -451,7 +397,7 @@
 
         .benefit-content-inner {
             padding: 0 2rem 1.5rem 2rem;
-            border-top: 1px solid rgba(48, 87, 236, 0.1);
+            border-top: 1px solid rgba(147, 51, 234, 0.1);
             margin-top: 0.5rem;
         }
 
@@ -465,7 +411,7 @@
         /* Specialties Section */
         .specialties-section {
             padding: 5rem 1rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.6) 100%), rgba(165, 225, 250);
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
         }
 
         .specialties-grid {
@@ -488,7 +434,7 @@
 
         .specialty-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(48, 87, 236, 0.12);
+            box-shadow: 0 8px 25px rgba(147, 51, 234, 0.12);
         }
 
         .specialty-checkmark {
@@ -498,7 +444,7 @@
         }
 
         .specialty-text {
-            color: #3057EC;
+            color: var(--text-dark);
             font-weight: 500;
         }
 
@@ -533,60 +479,17 @@
             border-image: var(--gradient) 1;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .training-card .benefit-toggle {
-            padding: 0;
-            width: auto;
-            flex-shrink: 0;
-            margin-left: auto;
-        }
-
-        .training-card .benefit-content-inner {
-            padding: 0;
-            border-top: 1px solid rgba(48, 87, 236, 0.1);
-            margin-top: 0.5rem;
-        }
-
-        .training-card .benefit-content {
-            flex-basis: 100%;
-        }
-
-        .training-card.active .benefit-content {
-            max-height: 500px;
-        }
-
-        .training-card.active .toggle-icon {
-            transform: none;
-            background: rgba(218, 240, 251) !important;
-            color: #3057EC !important;
-        }
-
-        .training-card .benefit-toggle:hover .toggle-icon {
-            background: #2848D0;
-            color: white;
         }
 
         .training-card:hover {
             transform: translateX(5px);
-            box-shadow: 0 8px 30px rgba(48, 87, 236, 0.15);
-        }
-
-        .training-info {
-            flex: 1;
-            min-width: 0;
+            box-shadow: 0 8px 30px rgba(147, 51, 234, 0.15);
         }
 
         .training-name {
             color: var(--primary-color);
             font-weight: 600;
-            margin-bottom: 0.25rem;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
+            margin-bottom: 0.5rem;
         }
 
         .training-master {
@@ -597,13 +500,9 @@
         /* Testimonials Section */
         .testimonials-section {
             padding: 5rem 1rem;
-            margin: 0 auto;
-            background: rgba(225, 244, 254);
-        }
-
-        .testimonials-section .testimonials-grid {
             max-width: 1400px;
             margin: 0 auto;
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
         }
 
         .testimonials-grid {
@@ -626,7 +525,7 @@
 
         .testimonial-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(48, 87, 236, 0.15);
+            box-shadow: 0 15px 50px rgba(147, 51, 234, 0.15);
         }
 
         .testimonial-card::before {
@@ -635,7 +534,7 @@
             top: 1rem;
             left: 1.5rem;
             font-size: 4rem;
-            color: rgba(48, 87, 236, 0.1);
+            color: rgba(147, 51, 234, 0.1);
             font-family: Georgia, serif;
         }
 
@@ -654,18 +553,18 @@
             gap: 1rem;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(48, 87, 236, 0.1);
+            border-top: 1px solid rgba(147, 51, 234, 0.1);
         }
 
         .author-avatar {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(217, 236, 255);
+            background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #3057EC;
+            color: white;
             font-weight: bold;
             font-size: 1.2rem;
         }
@@ -700,7 +599,7 @@
         /* CTA Section */
         .cta-section {
             padding: 5rem 1rem;
-            background: #F0F0F0;
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
             text-align: center;
         }
 
@@ -765,84 +664,51 @@
             margin-bottom: 2rem;
         }
         
-        .footer-cta-wrapper {
-            position: relative;
+        .footer-cta-button {
             display: inline-block;
+            padding: 1rem 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
             border-radius: 50px;
-            padding: 3px;
-            background: transparent;
-            transition: background 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
+            position: relative;
+            border: 3px solid transparent;
+            background-clip: padding-box;
         }
 
-        .footer-cta-wrapper:hover {
+        .footer-cta-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
             background: linear-gradient(90deg, 
                 #ff0000, #ff7f00, #ffff00, #00ff00, 
                 #0000ff, #8b00ff, #ff0000);
             background-size: 400% 400%;
-            animation: rainbow-border 4s linear infinite;
-        }
-
-        .footer-cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--gradient);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 10px 30px rgba(48, 87, 236, 0.3);
-            position: relative;
-            border: none;
-        }
-
-        /* === ENHANCEMENTS === */
-
-        /* 1. Testimonial cards - thin left blue border */
-        .testimonial-card {
-            border-left: 4px solid #3057EC;
-        }
-
-        /* 3. CTA "Book a Session" button glow */
-        .cta-section .cta-button {
-            box-shadow: 0 10px 30px rgba(48, 87, 236, 0.3), 0 0 20px rgba(165, 225, 250, 0.3);
-        }
-
-        .cta-section .cta-button:hover {
-            box-shadow: 0 15px 40px rgba(48, 87, 236, 0.4), 0 0 30px rgba(165, 225, 250, 0.5);
-        }
-
-        /* 4. Scroll fade-in animations */
-        .fade-in-section {
+            border-radius: 25px;
+            z-index: -1;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 0.3s ease;
         }
 
-        .fade-in-section.visible {
+        .footer-cta-button:hover::before {
             opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 5. Navbar color shift on scroll */
-        .sticky-nav {
-            transition: background 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .sticky-nav.scrolled {
-            background: rgba(225, 244, 254, 0.95);
-            box-shadow: 0 2px 20px rgba(48, 87, 236, 0.15);
+            animation: rainbow-border 4s linear infinite;
         }
 
     </style>
 </head>
-<body id="top">
+<body>
     <!-- Sticky Navigation -->
     <nav class="sticky-nav" id="stickyNav">
-        <a href="#top" class="nav-logo-link"><img src="https://michelleblakeyoga.com/mby_logo_transparent.png" alt="Michelle Blake Yoga" class="nav-logo"></a>
-        <div class="nav-links">
-            <a href="#testimonials" class="nav-reviews"><span style="color: #FCD34D;">★★★★★</span></a>
-            <a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="nav-cta">Book a Session</a>
-        </div>
+        <img src="https://michelleblakeyoga.com/mby_logo_transparent.png" alt="Michelle Blake Yoga" class="nav-logo">
+        <a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="nav-cta">Book a Session</a>
     </nav>
 
     <!-- Hero Section -->
@@ -859,7 +725,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="transformative-services" class="services-section fade-in-section">
+    <section id="transformative-services" class="services-section">
         <div class="section-container">
             <div class="section-header">
                 <h2>Transformative Services</h2>
@@ -887,8 +753,8 @@
                 
                 <div class="service-card">
                     <div class="service-icon">🌟</div>
-                    <h3 class="service-title">Postural Enhancement</h3>
-                    <p class="service-description">Specialized techniques to enhance alignment and restore posture</p>
+                    <h3 class="service-title">Postural Improvement</h3>
+                    <p class="service-description">Specialized techniques to correct alignment and improve your posture</p>
                 </div>
                 
                 <div class="service-card">
@@ -908,11 +774,11 @@
         
     <!-- Image Section -->
     <section style="padding: 3rem 1rem; background: white; text-align: center;">
-        <img src="https://michelleblakeyoga.com/images/studio-mat.jpg" alt="Michelle Blake demonstrating yoga pose" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); border: 3px solid rgba(165, 225, 250, 0.6);">
+        <img src="https://michelleblakeyoga.com/images/studio-mat.jpg" alt="Michelle Blake demonstrating yoga pose" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
     </section>
 
     <!-- Find Ease Section -->
-    <section class="find-ease-section fade-in-section">
+    <section class="find-ease-section">
         <div class="section-container">
             <div class="section-header">
                 <h2>Find Ease with Yoga</h2>
@@ -1070,7 +936,7 @@
     </section>
 
     <!-- Specialties Section -->
-    <section class="specialties-section fade-in-section">
+    <section class="specialties-section">
         <div class="section-container">
             <div class="section-header">
                 <h2>Michelle's Specialties</h2>
@@ -1130,16 +996,11 @@
             
     <!-- Image Section -->
     <section style="padding: 3rem 1rem; background: white; text-align: center;">
-        <img src="https://michelleblakeyoga.com/images/michelle-backbend.jpg" alt="Michelle Blake demonstrating yoga pose" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); border: 3px solid rgba(165, 225, 250, 0.6);">
+        <img src="https://michelleblakeyoga.com/images/michelle-backbend.jpg" alt="Michelle Blake demonstrating yoga pose" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
     </section>
 
-    <!-- CTA Button -->
-    <div style="text-align: center; padding: 1rem 0 2rem;">
-        <a href="/cdn-cgi/l/email-protection#9fd2f6fcf7faf3f3fab1ddf3fef4fab1d7fafef3f6f1f8dff8f2fef6f3b1fcf0f2" class="cta-button">Book A Session Now</a>
-    </div>
-
     <!-- Training Section -->
-    <section class="training-section fade-in-section">
+    <section class="training-section">
         <div class="section-container">
             <div class="section-header">
                 <h2>World-Class Training</h2>
@@ -1153,10 +1014,11 @@
             
             <div class="training-grid">
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Yapana® Yoga</div>
-                    <div class="training-master">with Leeann Carey</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Yapana® Yoga</div>
+                    <div class="training-master">with Leeann Carey</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1164,13 +1026,15 @@
                                 <p>Yapana is an ancient Sanskrit word meaning "the support and extension of life." This restorative hatha yoga practice consists of simple movements to warm up the body, followed by dynamic and relaxing poses held for extended periods with the support of yoga props, ending with final relaxation. The practice meets people where they are and is designed to encourage self-inquiry, reflection, and change. Props allow practitioners to hold poses longer and deepen their healing effects, making yoga accessible to all body types, phases of life, and physical abilities.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Yapana® Yoga for Supporting Scoliosis</div>
-                    <div class="training-master">with Leeann Carey</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Yapana® Yoga for Supporting Scoliosis</div>
+                    <div class="training-master">with Leeann Carey</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1178,13 +1042,15 @@
                                 <p>A specialized application of Yapana Yoga principles designed to support individuals with scoliosis. This therapeutic approach uses props and modified poses to help address spinal curvature, improve posture, and reduce discomfort associated with scoliosis while promoting balance and alignment in the body.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Viniyoga™</div>
-                    <div class="training-master">with Gary Kraftsow</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Viniyoga™</div>
+                    <div class="training-master">with Gary Kraftsow</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1192,13 +1058,15 @@
                                 <p>Viniyoga provides a methodology for creating individualized yoga programs adapted to each person's unique condition and needs. This therapeutic approach emphasizes the appropriate application of yoga tools, including asana, pranayama, meditation, and philosophy, to support healing and wellness. The practice moves from form to function, showing how sequences of postures can alleviate ailments throughout the body's systems.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Restorative Yoga</div>
-                    <div class="training-master">with Judith Hanson Lasater</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Restorative Yoga</div>
+                    <div class="training-master">with Judith Hanson Lasater</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1206,13 +1074,15 @@
                                 <p>Restorative Yoga offers the body a chance to rest deeply and revitalize. This practice uses props to support the body in poses held for extended periods, allowing for profound relaxation and healing. Rather than stretching, it focuses on opening to the breath and creating space for the nervous system to restore balance. The practice counteracts chronic stress, lowers blood pressure, stabilizes mood, and supports overall well-being.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Power Yoga</div>
-                    <div class="training-master">with Beryl Bender Birch</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Power Yoga</div>
+                    <div class="training-master">with Beryl Bender Birch</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1220,13 +1090,15 @@
                                 <p>Power Yoga is a dynamic, flowing practice based on Ashtanga Yoga that combines strong postures with rhythmic breathing to create a high-energy workout. This practice builds strength, increases endurance, and improves flexibility while developing concentration and reducing stress. The choreographed sequences create heat in the body and offer both physical conditioning and mental clarity.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Ashtanga Yoga</div>
-                    <div class="training-master">with Tias Little</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Ashtanga Yoga</div>
+                    <div class="training-master">with Tias Little</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1234,13 +1106,15 @@
                                 <p>Ashtanga Yoga is a traditional eight-limbed yoga system that includes a vigorous series of postures practiced in a specific sequence. This dynamic practice synchronizes breath with movement to produce internal heat and a purifying sweat that detoxifies muscles and organs. The result is improved circulation, flexibility, stamina, and a calm, focused mind.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Ohashiatsu®</div>
-                    <div class="training-master">with Hazel Chung</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Ohashiatsu®</div>
+                    <div class="training-master">with Hazel Chung</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1248,13 +1122,15 @@
                                 <p>Ohashiatsu is a holistic bodywork method that goes beyond traditional shiatsu to create a mutual exchange of energy between practitioner and receiver. Based on Oriental medical principles of meridian energy manipulation, this nurturing touch therapy relieves tension, releases blocked energy, and promotes deep relaxation of body, mind, and spirit. The practice emphasizes both the wellbeing of the giver and receiver.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">NeuroKinetic Therapy®</div>
-                    <div class="training-master">with Kim and Herson Garcia</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">NeuroKinetic Therapy®</div>
+                    <div class="training-master">with Kim and Herson Garcia</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1262,13 +1138,15 @@
                                 <p>NeuroKinetic Therapy is a sophisticated assessment and treatment modality that addresses the cause of pain and dysfunction by testing muscle coordination and communication patterns. This system identifies compensation patterns in the motor control center of the brain and resets dysfunctional patterns to restore proper movement and eliminate pain.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Integrative Movement System™ / Corrective Exercise Specialist</div>
-                    <div class="training-master">with Evan Osar</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Integrative Movement System™ / Corrective Exercise Specialist</div>
+                    <div class="training-master">with Evan Osar</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1276,13 +1154,15 @@
                                 <p>The Integrative Movement System provides a comprehensive framework for assessing and correcting movement dysfunctions. This approach focuses on restoring optimal movement patterns through corrective exercises that address postural imbalances, muscle imbalances, and faulty movement strategies to improve function and prevent injury.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">The Compassion Key®</div>
-                    <div class="training-master">with Edward Mannix</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">The Compassion Key®</div>
+                    <div class="training-master">with Edward Mannix</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1290,13 +1170,15 @@
                                 <p>The Compassion Key is a transformative healing method that helps release emotional pain and trauma stored in the body. This gentle approach uses compassionate presence and somatic awareness to support deep healing, allowing individuals to process and release past hurts while cultivating self-compassion and inner peace.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Intergenerational Trauma Healing Method</div>
-                    <div class="training-master">with Gulara Vincent</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Intergenerational Trauma Healing Method</div>
+                    <div class="training-master">with Gulara Vincent</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1304,13 +1186,15 @@
                                 <p>This healing modality addresses trauma patterns that are passed down through generations. The method helps individuals identify and release inherited trauma responses, breaking cycles of pain and suffering that may have affected families for generations. This work supports deep healing at both personal and ancestral levels.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Healing from the Core®</div>
-                    <div class="training-master">with Suzanne Scurlock-Durana</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Healing from the Core®</div>
+                    <div class="training-master">with Suzanne Scurlock-Durana</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1318,13 +1202,15 @@
                                 <p>Healing from the Core integrates body awareness, craniosacral therapy, and conscious breathing to awaken the body's innate wisdom and healing capacity. This approach helps individuals connect with their core and develop a felt sense of inner strength, resilience, and wholeness. The practice supports deep healing by accessing the body's natural intelligence.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">The MELT Method®</div>
-                    <div class="training-master">with Sue Hitzmann</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">The MELT Method®</div>
+                    <div class="training-master">with Sue Hitzmann</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1332,13 +1218,15 @@
                                 <p>The MELT Method is a self-treatment technique that addresses the body's connective tissue (fascia) to eliminate chronic pain and counteract the effects of aging. Using specialized soft foam rollers and balls, MELT rehydrates connective tissue, releases stuck stress, and restores balance to the nervous system. This gentle approach reduces pain, improves flexibility, and enhances overall performance in just minutes a day.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
                 
                 <div class="training-card">
-                    <div class="training-info"><div class="training-name">Yamuna Body Rolling®</div>
-                    <div class="training-master">with Yamuna Zake</div></div>
-                    <button class="benefit-toggle">
-                            
+                    <div class="training-name">Yamuna Body Rolling®</div>
+                    <div class="training-master">with Yamuna Zake</div>
+                    <div class="benefit-item" style="margin-top: 1rem;">
+                        <button class="benefit-toggle">
+                            <span class="benefit-title" style="font-size: 0.9rem;">Learn more</span>
                             <span class="toggle-icon">+</span>
                         </button>
                         <div class="benefit-content">
@@ -1346,6 +1234,7 @@
                                 <p>Yamuna Body Rolling is a self-healing practice that uses specially designed balls to release muscle tension, improve alignment, and increase range of motion. By rolling along the body's muscles and bones, practitioners can address the root cause of pain and dysfunction, stimulate bone health, improve organ function, and create lasting structural changes in the body.</p>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1353,11 +1242,11 @@
     
     <!-- Image Section -->
     <section style="padding: 3rem 1rem; background: white; text-align: center;">
-        <img src="https://michelleblakeyoga.com/images/michelle-ball.jpg" alt="Michelle Blake demonstrating yoga pose" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); border: 3px solid rgba(165, 225, 250, 0.6);">
+        <img src="https://michelleblakeyoga.com/images/michelle-ball.jpg" alt="Michelle Blake demonstrating yoga pose" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
     </section>
     
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section fade-in-section">
+    <section id="testimonials" class="testimonials-section">
         <div class="section-header">
             <h2>What Clients Say</h2>
             <p>Real transformations from our amazing community</p>
@@ -1581,14 +1470,14 @@
     </section>
     
     <!-- CTA Section -->
-    <section id="contact" class="cta-section fade-in-section">
+    <section id="contact" class="cta-section">
         <h2>What if you were to take your next step toward feeling better?</h2>
         <p>Are you looking for greater ease, grace, and joy in your body and life?</p>
         <p>Contact Michelle now and begin your new path forward.</p>
 
         <!--<div class="logo-container">-->
         <div class="footer-logo">
-            <img src="https://michelleblakeyoga.com/msb_lying_on_arm_with_logo_and_certs.png" alt="Michelle Blake Yoga" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); border: 3px solid rgba(165, 225, 250, 0.6);">
+            <img src="https://michelleblakeyoga.com/msb_lying_on_arm_with_logo_and_certs.png" alt="Michelle Blake Yoga" style="max-width: 100%; height: auto; max-height: 600px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
         </div>
         
         <div class="contact-info">
@@ -1612,12 +1501,12 @@
     <!-- Footer Section -->
     <section class="footer">
         <div class="footer-logo">
-            <img src="https://michelleblakeyoga.com/mbyoga_logo_lightgrey_text_℠.png" alt="Michelle Blake Yoga" style="width: 300px; height: auto; opacity: 0.95;">
+            <img src="https://michelleblakeyoga.com/mby_logo_transparent.png" alt="Michelle Blake Yoga" style="width: 300px; height: auto; opacity: 0.95;">
         </div>
 
         <h3>Ready to Transform Your Life?</h3>
         <p>Join our community and experience the Michelle Blake Yoga difference</p>
-        <div class="footer-cta-wrapper"><a href="/cdn-cgi/l/email-protection#e0ad898388858c8c85cea28c818b85cea885818c898e87a0878d81898cce838f8d" class="footer-cta-button">Start Your Journey Today</a></div>
+        <a href="/cdn-cgi/l/email-protection#e0ad898388858c8c85cea28c818b85cea885818c898e87a0878d81898cce838f8d" class="footer-cta-button">Start Your Journey Today</a>
     </section>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1638,50 +1527,5 @@
         // Benefits accordion functionality
         document.querySelectorAll('.benefit-toggle').forEach(button => {
             button.addEventListener('click', function() {
-                const parent = this.closest('.benefit-item') || this.closest('.training-card');
-                const isActive = parent.classList.contains('active');
-                
-                // Close all other accordions and reset icons
-                document.querySelectorAll('.benefit-item, .training-card').forEach(item => {
-                    if (item.classList.contains('active')) {
-                        item.classList.remove('active');
-                        const icon = item.querySelector('.toggle-icon');
-                        if (icon) icon.textContent = '+';
-                    }
-                });
-                
-                // Toggle current accordion
-                if (!isActive) {
-                    parent.classList.add('active');
-                    this.querySelector('.toggle-icon').textContent = '−';
-                }
-            });
-        });
-
-        // Scroll fade-in animations
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in-section').forEach(section => {
-            fadeObserver.observe(section);
-        });
-
-        // Navbar color shift on scroll past hero
-        const nav = document.getElementById('stickyNav');
-        const hero = document.querySelector('.hero');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > hero.offsetHeight - 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html>
+                const benefitItem = this.parentElement;
+                const isActive = benefitItem.classList.contains('active
